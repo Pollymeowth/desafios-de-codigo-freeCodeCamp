@@ -1,0 +1,131 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1 id="title">Formulário de Pesquisa</h1>
+
+    <p id="description">
+      Obrigado por participar da nossa pesquisa. Suas respostas são importantes.
+    </p>
+
+    <form id="survey-form">
+
+      <!-- Nome -->
+      <label id="name-label" for="name">
+        Nome
+      </label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Digite seu nome"
+        required
+      />
+
+      <!-- Email -->
+      <label id="email-label" for="email">
+        Email
+      </label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Digite seu email"
+        required
+      />
+
+      <!-- Número -->
+      <label id="number-label" for="number">
+        Idade
+      </label>
+      <input
+        id="number"
+        type="number"
+        name="age"
+        min="10"
+        max="99"
+        placeholder="Digite sua idade"
+      />
+
+      <!-- Dropdown -->
+      <label for="dropdown">
+        Qual opção descreve melhor você?
+      </label>
+      <select id="dropdown" name="role">
+        <option disabled selected value>
+          Selecione uma opção
+        </option>
+        <option value="student">Estudante</option>
+        <option value="worker">Trabalhador</option>
+        <option value="other">Outro</option>
+      </select>
+
+      <!-- Radio buttons -->
+      <p>Você recomendaria este formulário?</p>
+      <label>
+        <input
+          type="radio"
+          name="recommend"
+          value="yes"
+        />
+        Sim
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="recommend"
+          value="maybe"
+        />
+        Talvez
+      </label>
+
+      <!-- Checkboxes -->
+      <p>Quais tecnologias você usa?</p>
+      <label>
+        <input
+          type="checkbox"
+          name="tech"
+          value="html"
+        />
+        HTML
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="tech"
+          value="css"
+        />
+        CSS
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="tech"
+          value="javascript"
+        />
+        JavaScript
+      </label>
+
+      <!-- Textarea -->
+      <p>Comentários adicionais</p>
+      <textarea
+        name="comments"
+        placeholder="Digite seus comentários aqui..."
+      ></textarea>
+
+      <!-- Botão submit -->
+      <button id="submit" type="submit">
+        Enviar
+      </button>
+
+    </form>
+  </body>
+</html>
+
+** end of index.html **
+

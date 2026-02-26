@@ -1,0 +1,18 @@
+** start of script.js **
+
+function truncateString(string, num){
+  if(string.length > num){
+    let string1 = string.slice(0, num);
+    let string2 = string.slice(string1.length);
+    let newString = string1 + string2.replace(string2, ".").repeat(3);
+    return newString; 
+  }
+  else{
+    return string
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8))
+
+** end of script.js **
+

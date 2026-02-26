@@ -1,0 +1,27 @@
+** start of script.js **
+
+let count = 0
+
+function cardCounter(card){
+  
+  if(card>=2 && card <= 10){
+    card = parseInt(card);
+    if (card >= 2 && card <= 6){
+      count++
+    }else if(card>=10){
+      count--
+    }
+  }else{
+    card = card.toString();
+    if(["J","Q","K","A"].includes(card)){
+      count--
+    }
+  }
+
+  return count > 0 ? `${count} Bet` : `${count} Hold`;
+}
+
+console.log(cardCounter("J"))
+
+** end of script.js **
+
