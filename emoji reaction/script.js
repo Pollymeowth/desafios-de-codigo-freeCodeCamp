@@ -10,3 +10,7 @@ function updateCount(btn) {
 }
 
 const btns = document.querySelectorAll(".emoji-btn");
+
+btns.forEach(function fallBack(btn){
+  btn.addEventListener("click", () => updateCount(btn))
+})
