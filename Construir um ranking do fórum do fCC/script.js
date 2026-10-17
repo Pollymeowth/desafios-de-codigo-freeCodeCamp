@@ -59,8 +59,12 @@ function avatars(posters, users) {
   for (let i = 0; i < posters.length; i++) {
     for (let j = 0; j < users.length; j++) {
       if (posters[i].user_id === users[j].id) {
-        const newUrl = (users[i].avatar_template).replace("{size}", 30);
-        listImg += `<img alt="${users[i].name}" src="${avatarUrl}${newUrl}"/>\n`;
+        const newUrl = (users[j].avatar_template).replace("{size}", 30);
+        const userAvatarUrl = newUrl.startsWith("http")
+          ? newUrl
+          : `${avatarUrl}${newUrl}`;
+
+        listImg += `<img alt="${users[j].name}" src="${userAvatarUrl}"/>\n`;
       }
     }
   }
@@ -73,10 +77,10 @@ function showLatestPosts(data) {
   const dataTopics = data.topic_list
   for (const [id, data] of Object.entries(dataTopics.topics)) {
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td id=${id}>
-        <a class=${data.title} href="${forumTopicUrl}${data.slug}/${id}">${data.title}</a>
-        <a>${forumCategory(data.category_id)}</a>
+    tr.innerHTML += `
+      <td id=${data.id}>
+        <a class="post-title" href="${forumTopicUrl}${data.slug}/${data.id}">${data.title}</a>
+        ${forumCategory(data.category_id)}
       </td>
       <td>
         <div class="avatar-container">
@@ -84,7 +88,7 @@ function showLatestPosts(data) {
         </div>
       </td>
       <td>${data.posts_count - 1}</td>
-      <td>${data.views}</td>
+      <td>${viewCount(data.views)}</td>
       <td>${timeAgo(data.bumped_at)}</td>
     `;
     postsContainer.appendChild(tr);
