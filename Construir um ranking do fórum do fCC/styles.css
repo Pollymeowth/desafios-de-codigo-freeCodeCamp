@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #0f172a;
+  --dark-navy: #020617;
+  --card-bg: #1e293b;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-blue: #38bdf8;
+
+  /* Cores das badges de categoria */
+  --salmon-color: #fca5a5;
+  --light-blue: #7dd3fc;
+  --light-orange: #fdba74;
+  --light-green: #86efac;
+  --golden-yellow: #fde047;
+  --gold: #fbbf24;
+  --green: #4ade80;
+  --peach: #fda4af;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  background-color: var(--dark-navy);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fcc-logo {
+  width: 190px;
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.2s ease;
+}
+
+.fcc-logo:hover {
+  opacity: 0.85;
+}
+
+.title {
+  margin: 40px 0 24px;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.table-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+#topics {
+  text-align: start;
+  width: 55%;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+td:not(:first-child) {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.post-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.post-title:hover {
+  color: var(--accent-blue);
+}
+
+/* Badges de categoria */
+.category {
+  display: table; 
+  padding: 3px 10px;
+  margin-top: 8px; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  color: #111827;
+  text-decoration: none;
+}
+.category:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.career { background-color: var(--salmon-color); }
+.feedback, .html-css { background-color: var(--light-blue); }
+.support { background-color: var(--light-orange); }
+.general { background-color: var(--light-green); }
+.javascript { background-color: var(--golden-yellow); }
+.backend { background-color: var(--gold); }
+.python { background-color: var(--green); }
+.motivation { background-color: var(--peach); }
+
+/* Avatares circulares e sobrepostos */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.avatar-container img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--card-bg);
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.avatar-container img:hover {
+  transform: scale(1.15);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    padding: 0 12px;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin: 25px 0 18px;
+  }
+
+  th, td {
+    padding: 12px 14px;
+  }
+
+  .post-title {
+    font-size: 0.95rem;
+  }
+}
